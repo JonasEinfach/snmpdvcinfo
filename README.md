@@ -1,2 +1,3 @@
 # snmpdvcinfo
-Get Device Information via SNMP
+--> Script for fetching Device Information via SNMP
+--> Multivendor support 

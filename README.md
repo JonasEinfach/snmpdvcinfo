@@ -11,6 +11,5 @@
 --> Cisco Catalyst 9000 <br />
 <br />
 ## Usage Examples:
-<br />
 snmpdvcinfo.get_dvc_info("10.10.10.10","YOUR_SNMP-V2_COMMUNITY_STRING") <br />
 C6807XL,Version 15.6(1)SY7 <br />

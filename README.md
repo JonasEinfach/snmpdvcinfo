@@ -5,6 +5,8 @@
 ## Actual supported devices:
 --> Cisco Nexus <br />
 --> Cisco Catalyst 2960X <br />
+--> Cisco Catalyst 3650 <br />
+--> Cisco Catalyst 3560 <br />
 --> Cisco Catalyst 4500 <br />
 --> Cisco Catalyst 1000 <br />
 --> Cisco Catalyst 4900 <br />

@@ -1,5 +1,6 @@
 # snmpdvcinfo - SNMP Device Information
---> Script for fetching Device Information via SNMP (Model, Version)  <br />
+--> Script for fetching Network Device Information via SNMP (Model, Version)  <br />
+--> Cisco support <br />
 --> Multivendor support (planned) <br />
 <br />
 <br />

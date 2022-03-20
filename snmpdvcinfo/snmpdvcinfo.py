@@ -29,6 +29,7 @@ OID_CISCO_MODEL_NX = "1.3.6.1.2.1.47.1.1.1.1.13.10"
 OID_CISCO_MODEL_C1000 = "1.3.6.1.2.1.47.1.1.1.1.2.1001"
 OID_CISCO_MODEL_C2960X = "1.3.6.1.2.1.47.1.1.1.1.2.1001"
 OID_CISCO_MODEL_C4900 = "1.3.6.1.2.1.47.1.1.1.1.13.1000"
+OID_CISCO_MODEL_C3560 = "1.3.6.1.2.1.47.1.1.1.1.2.1001"
 
 OID_CISCO_VERSION = "1.3.6.1.2.1.1.1.0"
 OID_CISCO_VERSION_SW_4500 = "1.3.6.1.2.1.47.1.1.1.1.10.1000"
@@ -70,6 +71,7 @@ def get_dvc_info_cisco(ip,community_string):
         elif "Catalyst 4500 L3 Switch" in dvc_version: return get_dvc_info_cisco_c4500(ip,community_string)
         elif "C1000" in dvc_version: return get_dvc_info_cisco_c1000(ip,community_string)
         elif "C2960X" in dvc_version: return get_dvc_info_cisco_c2960x(ip,community_string)
+        elif "C3560" in dvc_version: return get_dvc_info_cisco_c3560(ip,community_string)
         else: return get_dvc_info_cisco_default(ip,community_string)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_nx(ip,community_string): # --> get model and version for cisco nexus devices
@@ -140,7 +142,7 @@ def get_dvc_info_cisco_c1000(ip,community_string): # --> get model and version f
 
     return "%s,%s" % (dvc_model,dvc_version)
 # ------------------------------------------------------------------------------
-def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version for cisco C1000 Switches
+def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version for cisco C2960x Switches
 
     # --> get version
     dvc_version = get_snmp(ip, [OID_CISCO_VERSION], hlapi.CommunityData(community_string))
@@ -158,6 +160,28 @@ def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version 
 
     if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_C2960X] != "":   # --> check for snmp error
         dvc_model = dvc_model[OID_CISCO_MODEL_C2960X]
+    else: dvc_model="no_device_model"
+
+    return "%s,%s" % (dvc_model,dvc_version)
+# ------------------------------------------------------------------------------
+def get_dvc_info_cisco_c3560(ip,community_string): # --> get model and version for cisco C3560 Switches
+
+    # --> get version
+    dvc_version = get_snmp(ip, [OID_CISCO_VERSION], hlapi.CommunityData(community_string))
+
+    if dvc_version != 0 and dvc_version[OID_CISCO_VERSION] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        dvc_version = dvc_version[OID_CISCO_VERSION]
+        dvc_version = dvc_version.split(",")  # --> separate at comma
+        dvc_version = dvc_version[2]  # --> take 3 peace in dict --> normally the version by cisco snmp
+        dvc_version = dvc_version.lstrip()  # --> cut space at start
+    else: dvc_version = "no_device_version"
+
+    # --> get model
+    dvc_model = get_snmp(ip, [OID_CISCO_MODEL_C3560], hlapi.CommunityData(community_string))
+
+    if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_C3560] != "":   # --> check for snmp error
+        dvc_model = dvc_model[OID_CISCO_MODEL_C3560]
     else: dvc_model="no_device_model"
 
     return "%s,%s" % (dvc_model,dvc_version)

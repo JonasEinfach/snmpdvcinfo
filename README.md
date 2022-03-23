@@ -13,7 +13,8 @@
 --> Cisco Catalyst 1000 <br />
 --> Cisco Catalyst 4900 <br />
 --> Cisco Catalyst 9000 <br />
---> Cisco Catalyst 6807 <br />
+--> Cisco Catalyst 6807 Standalone <br />
+--> Cisco Catalyst 6807 VSS <br />
 <br />
 <br />
 ## Usage Examples:

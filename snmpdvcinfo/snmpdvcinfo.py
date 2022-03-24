@@ -49,7 +49,7 @@ def get_dvc_info(ip,community_string):
             vendor = get_vendor(dvc_info) # --> get vendor
 
     if "Cisco" in vendor:
-        return get_dvc_info_cisco(ip,community_string)
+        return cisco.cisco_main.get_cisco_main(ip,community_string)
     else:
         return "none,none"
 # ------------------------------------------------------------------------------

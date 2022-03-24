@@ -11,8 +11,6 @@
 
 # --------------- M O D U L E S ---------------#
 
-#import cisco_sw_rt # --> import cisco functions
-
 # --------------- S N M P   O I D   V A R I A B L E S ---------------#
 
 OID_CISCO_VERSION = "1.3.6.1.2.1.1.1.0"

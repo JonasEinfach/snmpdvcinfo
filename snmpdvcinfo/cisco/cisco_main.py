@@ -11,7 +11,7 @@
 
 # --------------- M O D U L E S ---------------#
 
-import cisco_sw_rt # --> import cisco functions
+#import cisco_sw_rt # --> import cisco functions
 
 # --------------- S N M P   O I D   V A R I A B L E S ---------------#
 

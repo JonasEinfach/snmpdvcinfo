@@ -10,7 +10,7 @@
 # --------------- S T A R T   S C R I P T ---------------#
 
 # ------------------------------------------------------------------------------
-def get_cisco(ip,community_string):
+def get_cisco_main(ip,community_string):
 
     dvc_version = get_snmp(ip, [OID_CISCO_VERSION], hlapi.CommunityData(community_string))
 

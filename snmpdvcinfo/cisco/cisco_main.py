@@ -11,6 +11,8 @@
 
 # --------------- M O D U L E S ---------------#
 
+import snmpdvcinfo
+
 # --------------- S N M P   O I D   V A R I A B L E S ---------------#
 
 OID_CISCO_VERSION = "1.3.6.1.2.1.1.1.0"
@@ -18,7 +20,7 @@ OID_CISCO_VERSION = "1.3.6.1.2.1.1.1.0"
 # ------------------------------------------------------------------------------
 def get_cisco_main(ip,community_string):
 
-    dvc_version = snmpdvcinfo.get_snmp(ip, [OID_CISCO_VERSION], hlapi.CommunityData(community_string))
+    dvc_version = snmpdvcinfo.get_snmp(ip, [OID_CISCO_VERSION], community_string)
 
     if dvc_version != 0 and dvc_version[OID_CISCO_VERSION] != "": # --> check for snmp error
         dvc_version = dvc_version[OID_CISCO_VERSION]

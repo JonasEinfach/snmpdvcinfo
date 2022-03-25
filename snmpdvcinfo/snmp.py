@@ -18,8 +18,10 @@ from pysnmp import hlapi # --> snmp requests
 SNMP_PORT = "161"
 
 # ------------------------------------------------------------------------------
-def get_snmp(target, oids, credentials, port=SNMP_PORT, engine=hlapi.SnmpEngine(), context=hlapi.ContextData()):
-
+def get_snmp(target, oids, community_string, port=SNMP_PORT, engine=hlapi.SnmpEngine(), context=hlapi.ContextData()):
+    
+    credentials = hlapi.CommunityData(community_string)
+    
     try:
         handler = hlapi.getCmd(
             engine,

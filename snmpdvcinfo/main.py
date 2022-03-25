@@ -24,22 +24,22 @@ OID_GENERAL_DEVICE_INFO = ["1.3.6.1.2.1.1.1","1.3.6.1.2.1.1.1.0","1.3.6.1.2.1.47
 
 # ------------------------------------------------------------------------------
 def get_dvc_info(ip,community_string):
-     
+
     for OID in OID_GENERAL_DEVICE_INFO:
-        
+
         vendor = ""
         dvc_info = snmpdvcinfo.get_snmp(ip, [OID], community_string)
-        
+
         if dvc_info != 0 and dvc_info[OID] != "": # --> check for snmp error --> every device should have a sys description string
             dvc_info = dvc_info[OID]
-            
+
             vendor = get_vendor(dvc_info) # --> get vendor
-            if "no_vendor_info" in vendor:
+            if not "no_vendor_info" in vendor:
                 break
-        
-    
-    if "Cisco" in vendor: return snmpdvcinfo.get_cisco_main(ip,community_string)
-    elif: "Fortinet" in vendor: return "Fortinet,Fortinet"
+
+
+    if   "Cisco" in vendor:    return snmpdvcinfo.get_cisco_main(ip,community_string)
+    elif "Fortinet" in vendor: return "Fortinet,Fortinet"
     else:
         return "none,none"
 # ------------------------------------------------------------------------------
@@ -52,3 +52,4 @@ def get_vendor(dvc_info):
 # ------------------------------------------------------------------------------
 
 #--------------- E N D   S C R I P T ---------------#
+

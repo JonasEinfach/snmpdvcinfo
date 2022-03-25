@@ -20,6 +20,7 @@
 -> Fortinet: <br />
 --> Fortinet 3000D<br />
 --> Fortinet 500E<br />
+--> Fortinet 300E<br />
 <br />
 ## Usage Examples:
 \>>> import snmpdvcinfo <br />

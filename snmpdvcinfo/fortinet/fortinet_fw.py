@@ -21,13 +21,6 @@ OID_FORTINET_VERSION = "1.3.6.1.2.1.47.1.1.1.1.10.1"
 
 # ------------------------------------------------------------------------------
 def get_dvc_info_fortinet_default(ip,community_string): # --> get model and version for fortinet devices --> default snmp getter
-
-    # --> get model
-    dvc_model = snmpdvcinfo.get_snmp(ip, [OID_FORTINET_MODEL], community_string)
-
-    if dvc_model != 0 and dvc_model[OID_FORTINET_MODEL] != "":   # --> check for snmp error
-        dvc_model = dvc_model[OID_FORTINET_MODEL]
-    else: dvc_model="no_device_model"
     
     # --> get version
     dvc_version = snmpdvcinfo.get_snmp(ip, [OID_FORTINET_VERSION], community_string)
@@ -40,7 +33,12 @@ def get_dvc_info_fortinet_default(ip,community_string): # --> get model and vers
         dvc_version = dvc_version.replace(",", "_")  # --> replace "," to "_"
     else: dvc_version = "no_device_version"
 
+    # --> get model
+    dvc_model = snmpdvcinfo.get_snmp(ip, [OID_FORTINET_MODEL], community_string)
 
+    if dvc_model != 0 and dvc_model[OID_FORTINET_MODEL] != "":   # --> check for snmp error
+        dvc_model = dvc_model[OID_FORTINET_MODEL]
+    else: dvc_model="no_device_model"
 
     return "%s,%s" % (dvc_model,dvc_version)
 # ------------------------------------------------------------------------------

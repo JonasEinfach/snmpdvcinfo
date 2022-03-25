@@ -16,6 +16,7 @@ from pysnmp import hlapi # --> snmp requests
 # --------------- G L O B A L   V A R I A B L E S ---------------#
 
 SNMP_PORT = "161"
+DEBUG = False
 
 # ------------------------------------------------------------------------------
 def get_snmp(target, oids, community_string, port=SNMP_PORT, engine=hlapi.SnmpEngine(), context=hlapi.ContextData()):

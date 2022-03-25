@@ -13,6 +13,7 @@
 # --------------- M O D U L E S ---------------#
 
 from pysnmp import hlapi  # --> snmp requests
+import snmpdvcinfo
 
 # --------------- G L O B A L   V A R I A B L E S ---------------#
 

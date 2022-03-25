@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
 # -------------------------------------------------#
-# Script Name: snmpdvcinfo.py                      #
+# Script Name: main.py                             #
 # -------------------------------------------------#
 # Script Author: Jonas Einfach                     #
-# Creation Date: 10.06.2020                        #
+# Creation Date: 25.03.2022                        #
 # -------------------------------------------------#
 
 # --------------- S T A R T   S C R I P T ---------------#

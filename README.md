@@ -1,10 +1,11 @@
 # snmpdvcinfo - SNMP Device Information
 --> Script for fetching Network Device Information via SNMP (Model, Version)  <br />
 --> Cisco support <br />
---> Multivendor support (planned) <br />
+--> Fortinet Firewall support <br />
 <br />
 <br />
 ## Actual supported devices:
+-> Cisco: <br />
 --> Cisco Nexus <br />
 --> Cisco Catalyst 2960X <br />
 --> Cisco Catalyst 3650 <br />
@@ -16,6 +17,8 @@
 --> Cisco Catalyst 6807 Standalone <br />
 --> Cisco Catalyst 6807 VSS <br />
 <br />
+-> Fortinet: <br />
+--> Fortinet 3000D<br />
 <br />
 ## Usage Examples:
 \>>> import snmpdvcinfo <br />

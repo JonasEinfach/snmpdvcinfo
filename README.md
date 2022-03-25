@@ -19,6 +19,7 @@
 <br />
 -> Fortinet: <br />
 --> Fortinet 3000D<br />
+--> Fortinet 600E<br />
 --> Fortinet 500E<br />
 --> Fortinet 300E<br />
 <br />

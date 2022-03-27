@@ -1,5 +1,5 @@
 # snmpdvcinfo - SNMP Device Information
---> Script for fetching Network Device Information via SNMP (Model, Version)  <br />
+--> Script for fetching Network Device Information via SNMP (Model, Version, SN)  <br />
 --> Cisco support <br />
 --> Fortinet Firewall support <br />
 <br />
@@ -17,7 +17,7 @@
 --> Cisco Catalyst 6807 Standalone <br />
 --> Cisco Catalyst 6807 VSS <br />
 <br />
--> Fortinet: <br />
+-> Fortinet: --> actual no SN support<br />
 --> Fortinet 3000D<br />
 --> Fortinet 1500D<br />
 --> Fortinet 600E<br />
@@ -27,4 +27,4 @@
 ## Usage Examples:
 \>>> import snmpdvcinfo <br />
 \>>>snmpdvcinfo.get_dvc_info("10.10.10.10","YOUR_SNMP-V2_COMMUNITY_STRING")  <br />
-'C6807XL','Version 15.6(1)SY7' <br />
+'C6807XL','Version 15.6(1)SY7','ABSCSJWHD' <br />

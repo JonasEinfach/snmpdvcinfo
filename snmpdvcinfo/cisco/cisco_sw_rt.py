@@ -27,6 +27,9 @@ OID_CISCO_VERSION = "1.3.6.1.2.1.1.1.0"
 OID_CISCO_VERSION_SW_4500 = "1.3.6.1.2.1.47.1.1.1.1.10.1000"
 OID_CISCO_VERSION_SW_3650 = "1.3.6.1.2.1.47.1.1.1.1.10.1000"
 
+OID_CISCO_SN = "1.3.6.1.2.1.47.1.1.1.1.11.1001"
+OID_CISCO_SN_SW_C3560 = "1.3.6.1.2.1.47.1.1.1.1.11.1001"
+
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_nx(ip,community_string): # --> get model and version for cisco nexus devices
 
@@ -48,7 +51,15 @@ def get_dvc_info_cisco_nx(ip,community_string): # --> get model and version for 
         dvc_model = dvc_model[OID_CISCO_MODEL_NX]
     else: dvc_model="no_device_model"
 
-    return "%s,%s" % (dvc_model,dvc_version)
+    # --> get sn
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        dvc_sn = dvc_sn[OID_CISCO_SN]
+    else: dvc_sn = "no_device_sn"
+
+    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c4500(ip,community_string): # --> get model and version for cisco C4500 Switches / C4900
 
@@ -72,7 +83,15 @@ def get_dvc_info_cisco_c4500(ip,community_string): # --> get model and version f
 
         else: dvc_model="no_device_model"
 
-    return "%s,%s" % (dvc_model,dvc_version)
+    # --> get sn
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        dvc_sn = dvc_sn[OID_CISCO_SN]
+    else: dvc_sn = "no_device_sn"
+
+    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c1000(ip,community_string): # --> get model and version for cisco C1000 Switches
 
@@ -94,7 +113,15 @@ def get_dvc_info_cisco_c1000(ip,community_string): # --> get model and version f
         dvc_model = dvc_model[OID_CISCO_MODEL_C1000]
     else: dvc_model="no_device_model"
 
-    return "%s,%s" % (dvc_model,dvc_version)
+    # --> get sn
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        dvc_sn = dvc_sn[OID_CISCO_SN]
+    else: dvc_sn = "no_device_sn"
+
+    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version for cisco C2960x Switches
 
@@ -116,7 +143,15 @@ def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version 
         dvc_model = dvc_model[OID_CISCO_MODEL_C2960X]
     else: dvc_model="no_device_model"
 
-    return "%s,%s" % (dvc_model,dvc_version)
+    # --> get sn
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        dvc_sn = dvc_sn[OID_CISCO_SN]
+    else: dvc_sn = "no_device_sn"
+
+    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c3560(ip,community_string): # --> get model and version for cisco C3560 Switches
 
@@ -138,7 +173,15 @@ def get_dvc_info_cisco_c3560(ip,community_string): # --> get model and version f
         dvc_model = dvc_model[OID_CISCO_MODEL_C3560]
     else: dvc_model="no_device_model"
 
-    return "%s,%s" % (dvc_model,dvc_version)
+    # --> get sn
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_C3560], community_string)
+
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_C3560] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        dvc_sn = dvc_sn[OID_CISCO_SN_SW_C3560]
+    else: dvc_sn = "no_device_sn"
+
+    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version for cisco C6807 Switches and VSS System
 
@@ -168,9 +211,17 @@ def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version f
         else:
             dvc_model="no_device_model"
 
-    return "%s,%s" % (dvc_model, dvc_version)
+    # --> get sn
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        dvc_sn = dvc_sn[OID_CISCO_SN]
+    else: dvc_sn = "no_device_sn"
+
+    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
-def get_dvc_info_cisco_default(ip,community_string): # --> get model and version for cisco catalyst Switches / router --> default snmp getter
+def get_dvc_info_cisco_default(ip,community_string): # --> get model, version and sn for cisco catalyst Switches / router --> default snmp getter
 
     # --> get version
     dvc_version = snmpdvcinfo.get_snmp(ip, [OID_CISCO_VERSION], community_string)
@@ -196,7 +247,15 @@ def get_dvc_info_cisco_default(ip,community_string): # --> get model and version
             dvc_version = dvc_version[OID_CISCO_VERSION_SW_3650]
         else: dvc_version = "no_device_version"
 
-    return "%s,%s" % (dvc_model,dvc_version)
+    # --> get sn
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        dvc_sn = dvc_sn[OID_CISCO_SN]
+    else: dvc_sn = "no_device_sn"
+
+    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 
 #--------------- E N D   S C R I P T ---------------#

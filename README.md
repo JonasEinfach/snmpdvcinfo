@@ -8,6 +8,7 @@
 -> Cisco: <br />
 --> Cisco Nexus <br />
 --> Cisco Catalyst 2960X <br />
+--> Cisco Catalyst 2960CG <br />
 --> Cisco Catalyst 3650 <br />
 --> Cisco Catalyst 3560 <br />
 --> Cisco Catalyst 4500 <br />
@@ -27,4 +28,4 @@
 ## Usage Examples:
 \>>> import snmpdvcinfo <br />
 \>>>snmpdvcinfo.get_dvc_info("10.10.10.10","YOUR_SNMP-V2_COMMUNITY_STRING")  <br />
-'C6807XL','Version 15.6(1)SY7','ABSCSJWHD' <br />
+'C6807XL,Version 15.6(1)SY7,ABSCSJWHD' <br />

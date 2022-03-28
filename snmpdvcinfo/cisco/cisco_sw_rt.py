@@ -29,6 +29,17 @@ OID_CISCO_VERSION_SW_3650 = "1.3.6.1.2.1.47.1.1.1.1.10.1000"
 
 OID_CISCO_SN = "1.3.6.1.2.1.47.1.1.1.1.11.1001"
 OID_CISCO_SN_SW_C3560 = "1.3.6.1.2.1.47.1.1.1.1.11.1001"
+OID_CISCO_SN_SW_C2960X = "1.3.6.1.2.1.47.1.1.1.1.11.1001"
+OID_CISCO_SN_SW_NX = "1.3.6.1.2.1.47.1.1.1.1.11.10"
+OID_CISCO_SN_SW_C1000 = "1.3.6.1.2.1.47.1.1.1.1.11.1001"
+OID_CISCO_SN_SW_C4500 = "1.3.6.1.2.1.47.1.1.1.1.11.1"
+OID_CISCO_SN_SW_C4900 = ""
+OID_CISCO_SN_SW_3650 = "1.3.6.1.2.1.47.1.1.1.1.11.1"
+OID_CISCO_SN_SW_C6807_VSS_1 = "1.3.6.1.2.1.47.1.1.1.1.11.1000"
+OID_CISCO_SN_SW_C6807_VSS_2 = "1.3.6.1.2.1.47.1.1.1.1.11.2000"
+OID_CISCO_SN_SW_C6807 = "1.3.6.1.2.1.47.1.1.1.1.11.1"
+OID_CISCO_SN_SW_C9000 = "1.3.6.1.2.1.47.1.1.1.1.11.1"
+
 
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_nx(ip,community_string): # --> get model and version for cisco nexus devices
@@ -52,11 +63,11 @@ def get_dvc_info_cisco_nx(ip,community_string): # --> get model and version for 
     else: dvc_model="no_device_model"
 
     # --> get sn
-    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_NX], community_string)
 
-    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_NX] != "": # --> check for snmp error
         # --> extract Version aus Dict
-        dvc_sn = dvc_sn[OID_CISCO_SN]
+        dvc_sn = dvc_sn[OID_CISCO_SN_SW_NX]
     else: dvc_sn = "no_device_sn"
         
     dvc_vendor = "cisco"
@@ -86,11 +97,11 @@ def get_dvc_info_cisco_c4500(ip,community_string): # --> get model and version f
         else: dvc_model="no_device_model"
 
     # --> get sn
-    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_C4500], community_string)
 
-    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_C4500] != "": # --> check for snmp error
         # --> extract Version aus Dict
-        dvc_sn = dvc_sn[OID_CISCO_SN]
+        dvc_sn = dvc_sn[OID_CISCO_SN_SW_C4500]
     else: dvc_sn = "no_device_sn"
 
     dvc_vendor = "cisco"
@@ -118,11 +129,11 @@ def get_dvc_info_cisco_c1000(ip,community_string): # --> get model and version f
     else: dvc_model="no_device_model"
 
     # --> get sn
-    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_C1000], community_string)
 
-    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_C1000] != "": # --> check for snmp error
         # --> extract Version aus Dict
-        dvc_sn = dvc_sn[OID_CISCO_SN]
+        dvc_sn = dvc_sn[OID_CISCO_SN_SW_C1000]
     else: dvc_sn = "no_device_sn"
 
     dvc_vendor = "cisco"
@@ -150,11 +161,11 @@ def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version 
     else: dvc_model="no_device_model"
 
     # --> get sn
-    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
+    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_C2960X], community_string)
 
-    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
+    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_C2960X] != "": # --> check for snmp error
         # --> extract Version aus Dict
-        dvc_sn = dvc_sn[OID_CISCO_SN]
+        dvc_sn = dvc_sn[OID_CISCO_SN_SW_C2960X]
     else: dvc_sn = "no_device_sn"
 
     dvc_vendor = "cisco"
@@ -211,6 +222,15 @@ def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version f
 
     if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_CAL] != "":   # --> check for snmp error
         dvc_model = dvc_model[OID_CISCO_MODEL_CAL]
+        
+        # --> get sn for standalone 6807
+        dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_C6807], community_string)
+
+        if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_C6807] != "": # --> check for snmp error
+            # --> extract Version aus Dict
+            dvc_sn = dvc_sn[OID_CISCO_SN_SW_C6807]
+        else: dvc_sn = "no_device_sn"
+        
 
     else:
         # --> get model for vss system
@@ -218,17 +238,26 @@ def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version f
 
         if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_C6807_VSS] != "":  # --> check for snmp error
             dvc_model = dvc_model[OID_CISCO_MODEL_C6807_VSS]
+        
+            # --> get sn for vss 1 & 2
+            dvc_sn_1 = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_C6807_VSS_1], community_string)
+            dvc_sn_2 = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_C6807_VSS_2], community_string)
+            
+            if dvc_sn_1 != 0 and dvc_sn_1[OID_CISCO_SN_SW_C6807_VSS_1] != "": # --> check for snmp error
+                # --> extract SN aus Dict
+                dvc_sn_1 = dvc_sn_1[OID_CISCO_SN_SW_C6807_VSS_1]
+            else: dvc_sn = "no_device_sn"
+                
+            if dvc_sn_2 != 0 and dvc_sn_2[OID_CISCO_SN_SW_C6807_VSS_2] != "": # --> check for snmp error
+                # --> extract SN aus Dict
+                dvc_sn_2 = dvc_sn_2[OID_CISCO_SN_SW_C6807_VSS_2]
+                dvc_sn = "%s_%s" %(dvc_sn_1,dvc_sn_2)
+            else: dvc_sn = "no_device_sn"
+        
         else:
             dvc_model="no_device_model"
-
-    # --> get sn
-    dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
-
-    if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
-        # --> extract Version aus Dict
-        dvc_sn = dvc_sn[OID_CISCO_SN]
-    else: dvc_sn = "no_device_sn"
-
+            dvc_sn = "no_device_sn"
+            
     dvc_vendor = "cisco"
 
     return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)

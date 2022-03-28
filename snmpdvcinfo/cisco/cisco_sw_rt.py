@@ -287,6 +287,14 @@ def get_dvc_info_cisco_default(ip,community_string): # --> get model, version an
         if dvc_version != 0 and dvc_version[OID_CISCO_VERSION_SW_3650] != "":  # --> check for snmp error
             dvc_version = dvc_version[OID_CISCO_VERSION_SW_3650]
         else: dvc_version = "no_device_version"
+            
+        # --> get sn for C3650
+        dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_3650], community_string)
+
+        if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_3650] != "": # --> check for snmp error
+            # --> extract Version aus Dict
+            dvc_sn = dvc_sn[OID_CISCO_SN_SW_3650]
+        else: dvc_sn = "no_device_sn"
 
     # --> get sn
     dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)

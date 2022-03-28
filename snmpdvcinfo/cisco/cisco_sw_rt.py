@@ -58,8 +58,10 @@ def get_dvc_info_cisco_nx(ip,community_string): # --> get model and version for 
         # --> extract Version aus Dict
         dvc_sn = dvc_sn[OID_CISCO_SN]
     else: dvc_sn = "no_device_sn"
+        
+    dvc_vendor = "cisco"
 
-    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
+    return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c4500(ip,community_string): # --> get model and version for cisco C4500 Switches / C4900
 
@@ -91,7 +93,9 @@ def get_dvc_info_cisco_c4500(ip,community_string): # --> get model and version f
         dvc_sn = dvc_sn[OID_CISCO_SN]
     else: dvc_sn = "no_device_sn"
 
-    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
+    dvc_vendor = "cisco"
+
+    return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c1000(ip,community_string): # --> get model and version for cisco C1000 Switches
 
@@ -121,7 +125,9 @@ def get_dvc_info_cisco_c1000(ip,community_string): # --> get model and version f
         dvc_sn = dvc_sn[OID_CISCO_SN]
     else: dvc_sn = "no_device_sn"
 
-    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
+    dvc_vendor = "cisco"
+
+    return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version for cisco C2960x Switches
 
@@ -151,7 +157,9 @@ def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version 
         dvc_sn = dvc_sn[OID_CISCO_SN]
     else: dvc_sn = "no_device_sn"
 
-    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
+    dvc_vendor = "cisco"
+
+    return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c3560(ip,community_string): # --> get model and version for cisco C3560 Switches
 
@@ -181,7 +189,9 @@ def get_dvc_info_cisco_c3560(ip,community_string): # --> get model and version f
         dvc_sn = dvc_sn[OID_CISCO_SN_SW_C3560]
     else: dvc_sn = "no_device_sn"
 
-    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
+    dvc_vendor = "cisco"
+
+    return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version for cisco C6807 Switches and VSS System
 
@@ -219,7 +229,9 @@ def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version f
         dvc_sn = dvc_sn[OID_CISCO_SN]
     else: dvc_sn = "no_device_sn"
 
-    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
+    dvc_vendor = "cisco"
+
+    return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_default(ip,community_string): # --> get model, version and sn for cisco catalyst Switches / router --> default snmp getter
 
@@ -255,7 +267,9 @@ def get_dvc_info_cisco_default(ip,community_string): # --> get model, version an
         dvc_sn = dvc_sn[OID_CISCO_SN]
     else: dvc_sn = "no_device_sn"
 
-    return "%s,%s,%s" % (dvc_model,dvc_version,dvc_sn)
+    dvc_vendor = "cisco"
+
+    return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)
 # ------------------------------------------------------------------------------
 
 #--------------- E N D   S C R I P T ---------------#

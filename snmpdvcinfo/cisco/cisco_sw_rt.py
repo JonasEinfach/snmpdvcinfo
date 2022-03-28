@@ -251,7 +251,7 @@ def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version f
             if dvc_sn_2 != 0 and dvc_sn_2[OID_CISCO_SN_SW_C6807_VSS_2] != "": # --> check for snmp error
                 # --> extract SN aus Dict
                 dvc_sn_2 = dvc_sn_2[OID_CISCO_SN_SW_C6807_VSS_2]
-                dvc_sn = "%s_%s" %(dvc_sn_1,dvc_sn_2)
+                dvc_sn = "VSS1:%s_VSS2:%s" %(dvc_sn_1,dvc_sn_2)
             else: dvc_sn = "no_device_sn"
         
         else:

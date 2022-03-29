@@ -36,9 +36,9 @@
 <br />
 ## Error Examples:
 <br />
-No SNMP Connection possible<br />
+No SNMP Connection possible:<br />
 'none,none,none,none'<br />
 <br />
-Cisco vendor detected but the device isn't supported <br />
+Cisco vendor detected but the device isn't supported:<br />
 'cisco,no_device_model,no_device_version,no_device_sn'<br />
 

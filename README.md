@@ -1,5 +1,5 @@
 # snmpdvcinfo - SNMP Device Information
---> Script for fetching Network Device Information via SNMP (Model, Version, SN)  <br />
+--> Script for fetching Network Device Information via SNMP (Vendor, Model, Version, SN)  <br />
 --> Cisco support <br />
 --> Fortinet Firewall support <br />
 <br />
@@ -19,7 +19,7 @@
 --> Cisco Catalyst 6807 Standalone <br />
 --> Cisco Catalyst 6807 VSS <br />
 <br />
--> Fortinet: --> actual no SN support<br />
+-> Fortinet: <br />
 --> Fortinet 3000D<br />
 --> Fortinet 1500D<br />
 --> Fortinet 600E<br />

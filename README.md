@@ -29,4 +29,10 @@
 ## Usage Examples:
 \>>> import snmpdvcinfo <br />
 \>>>snmpdvcinfo.get_dvc_info("10.10.10.10","YOUR_SNMP-V2_COMMUNITY_STRING")  <br />
-'C6807XL,Version 15.6(1)SY7,ABSCSJWHD' <br />
+'cisco,C6807XL,Version 15.6(1)SY7,ABSCSJWHD' <br />
+<br />
+\>>>snmpdvcinfo.get_dvc_info("10.10.10.11","YOUR_SNMP-V2_COMMUNITY_STRING")  <br />
+'fortinet,FGT_1500D,v7.8.1,ABSCSJWHX'
+<br />
+## Error Examples:
+<br />

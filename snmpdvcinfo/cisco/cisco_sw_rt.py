@@ -283,10 +283,10 @@ def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version f
 # ------------------------------------------------------------------------------
 def get_dvc_info_cisco_default(ip,community_string): # --> get model, version and sn for cisco catalyst Switches / router --> default snmp getter
     
-    dvc_vendor = "cisco"
-    dvc_version = "no_device_version"
-    dvc_sn = "no_device_sn"
-    dvc_model="no_device_model"
+    final_dvc_vendor = "cisco"
+    final_dvc_version = "no_device_version"
+    final_dvc_sn = "no_device_sn"
+    final_dvc_model="no_device_model"
     
     # --> get version
     dvc_version = snmpdvcinfo.get_snmp(ip, [OID_CISCO_VERSION], community_string)
@@ -296,34 +296,34 @@ def get_dvc_info_cisco_default(ip,community_string): # --> get model, version an
         dvc_version = dvc_version[OID_CISCO_VERSION]
         dvc_version = dvc_version.split(",")  # --> separate at comma
         dvc_version = dvc_version[2]  # --> take 3 peace in dict --> normally the version by cisco snmp
-        dvc_version = dvc_version.lstrip()  # --> cut space at start
+        final_dvc_version = dvc_version.lstrip()  # --> cut space at start
 
     # --> get model
     dvc_model = snmpdvcinfo.get_snmp(ip, [OID_CISCO_MODEL_CAL], community_string)
 
     if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_CAL] != "":   # --> check for snmp error
-        dvc_model = dvc_model[OID_CISCO_MODEL_CAL]
+        final_dvc_model = dvc_model[OID_CISCO_MODEL_CAL]
 
     # --> get sn for default 
     dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN], community_string)
 
     if dvc_sn != 0 and dvc_sn[OID_CISCO_SN] != "": # --> check for snmp error
         # --> extract Version aus Dict
-        dvc_sn = dvc_sn[OID_CISCO_SN]
+        final_dvc_sn = dvc_sn[OID_CISCO_SN]
         
     if "C3650" in dvc_model: # --> special for C3650
         dvc_version = snmpdvcinfo.get_snmp(ip, [OID_CISCO_VERSION_SW_3650], community_string)
         if dvc_version != 0 and dvc_version[OID_CISCO_VERSION_SW_3650] != "":  # --> check for snmp error
-            dvc_version = dvc_version[OID_CISCO_VERSION_SW_3650]
+            final_dvc_version = dvc_version[OID_CISCO_VERSION_SW_3650]
             
         # --> get sn for C3650
         dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_3650], community_string)
 
         if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_3650] != "": # --> check for snmp error
             # --> extract Version aus Dict
-            dvc_sn = dvc_sn[OID_CISCO_SN_SW_3650]
+            final_dvc_sn = dvc_sn[OID_CISCO_SN_SW_3650]
 
-    return "%s,%s,%s,%s" % (dvc_vendor,dvc_model,dvc_version,dvc_sn)
+    return "%s,%s,%s,%s" % (final_dvc_vendor,final_dvc_model,final_dvc_version,final_dvc_sn)
 # ------------------------------------------------------------------------------
 
 #--------------- E N D   S C R I P T ---------------#

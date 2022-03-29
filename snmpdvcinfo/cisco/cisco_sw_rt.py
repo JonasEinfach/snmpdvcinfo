@@ -21,6 +21,7 @@ OID_CISCO_MODEL_C1000 = "1.3.6.1.2.1.47.1.1.1.1.2.1001"
 OID_CISCO_MODEL_C2960X = "1.3.6.1.2.1.47.1.1.1.1.2.1001"
 OID_CISCO_MODEL_C4900 = "1.3.6.1.2.1.47.1.1.1.1.13.1000"
 OID_CISCO_MODEL_C3560 = "1.3.6.1.2.1.47.1.1.1.1.2.1001"
+OID_CISCO_MODEL_C4500_VSS = "1.3.6.1.2.1.47.1.1.1.1.13.2"
 OID_CISCO_MODEL_C6807_VSS = "1.3.6.1.2.1.47.1.1.1.1.13.1000"
 
 OID_CISCO_VERSION = "1.3.6.1.2.1.1.1.0"
@@ -82,18 +83,25 @@ def get_dvc_info_cisco_c4500(ip,community_string): # --> get model and version f
         dvc_version = dvc_version[OID_CISCO_VERSION_SW_4500]
     else: dvc_version = "no_device_version"
 
-    # --> get model
+    # --> get model for default C4500 standalone
     dvc_model = snmpdvcinfo.get_snmp(ip, [OID_CISCO_MODEL_CAL], community_string)
 
     if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_CAL] != "":   # --> check for snmp error
         dvc_model = dvc_model[OID_CISCO_MODEL_CAL]
 
-    else: # --> Special for WS-C4900
-        dvc_model = snmpdvcinfo.get_snmp(ip, [OID_CISCO_MODEL_C4900], community_string)
-        if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_C4900] != "":   # --> check for snmp error
-            dvc_model = dvc_model[OID_CISCO_MODEL_C4900]
+    else: # --> get model for default C4500 vss 
+        
+        dvc_model = snmpdvcinfo.get_snmp(ip, [OID_CISCO_MODEL_C4500_VSS], community_string)
 
-        else: dvc_model="no_device_model"
+        if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_C4500_VSS] != "":   # --> check for snmp error
+            dvc_model = dvc_model[OID_CISCO_MODEL_C4500_VSS]
+        
+        else: # --> Special for WS-C4900
+            dvc_model = snmpdvcinfo.get_snmp(ip, [OID_CISCO_MODEL_C4900], community_string)
+            if dvc_model != 0 and dvc_model[OID_CISCO_MODEL_C4900] != "":   # --> check for snmp error
+                dvc_model = dvc_model[OID_CISCO_MODEL_C4900]
+
+            else: dvc_model="no_device_model"
 
     # --> get sn
     dvc_sn = snmpdvcinfo.get_snmp(ip, [OID_CISCO_SN_SW_C4500], community_string)

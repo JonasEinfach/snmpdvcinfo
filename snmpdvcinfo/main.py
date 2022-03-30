@@ -38,10 +38,9 @@ def get_dvc_info(ip,community_string):
                 break
 
 
-    if   "Cisco" in vendor:    return snmpdvcinfo.get_cisco_main(ip,community_string)
-    elif "Fortinet" in vendor: return snmpdvcinfo.get_fortinet_main(ip,community_string)
-    else:
-        return "none,none,none,none"
+    if   "Cisco"    in vendor:  return snmpdvcinfo.get_cisco_main(ip,community_string)
+    elif "Fortinet" in vendor:  return snmpdvcinfo.get_fortinet_main(ip,community_string)
+    else:                       return "none,none,none,none"
 # ------------------------------------------------------------------------------
 def get_vendor(dvc_info):
 

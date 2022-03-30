@@ -30,10 +30,10 @@
 ## Usage Examples:
 \>>> import snmpdvcinfo <br />
 \>>>snmpdvcinfo.get_dvc_info("10.10.10.10","YOUR_SNMP-V2_COMMUNITY_STRING")  <br />
-{'dvc_vendor': 'cisco', 'CoreSW1': 'firewallhostname', 'dvc_model': 'C6807XL', 'dvc_version': 'Version 15.6(1)SY7', 'dvc_sn': 'ABSCSJWHD'}
+{'dvc_vendor': 'cisco', 'CoreSW1': 'firewallhostname', 'dvc_model': 'C6807XL', 'dvc_version': 'Version 15.6(1)SY7', 'dvc_sn': 'ABSCSJWHD'}<br />
 <br />
 \>>>snmpdvcinfo.get_dvc_info("10.10.10.11","YOUR_SNMP-V2_COMMUNITY_STRING")  <br />
-{'dvc_vendor': 'fortinet', 'dvc_hostname': 'firewallhostname', 'dvc_model': 'FGT_1500D', 'dvc_version': 'v7.8.1', 'dvc_sn': 'ABSCSJWHX'}
+{'dvc_vendor': 'fortinet', 'dvc_hostname': 'firewallhostname', 'dvc_model': 'FGT_1500D', 'dvc_version': 'v7.8.1', 'dvc_sn': 'ABSCSJWHX'}<br />
 <br />
 ## Error Examples:
 <br />

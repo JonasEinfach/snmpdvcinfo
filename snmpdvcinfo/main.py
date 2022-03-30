@@ -38,9 +38,9 @@ def get_dvc_info(ip,community_string):
                 break
 
 
-    if   "Cisco"    in vendor:  return snmpdvcinfo.get_cisco_main(ip,community_string)
-    elif "Fortinet" in vendor:  return snmpdvcinfo.get_fortinet_main(ip,community_string)
-    else:                       return "none,none,none,none"
+    if   "Cisco"    in vendor:  return build_dict(snmpdvcinfo.get_cisco_main(ip,community_string))
+    elif "Fortinet" in vendor:  return build_dict(snmpdvcinfo.get_fortinet_main(ip,community_string))
+    else:                       return build_dict("none,none,none,none,none")
 # ------------------------------------------------------------------------------
 def get_vendor(dvc_info):
 
@@ -49,6 +49,12 @@ def get_vendor(dvc_info):
 
     return "no_vendor_info"
 # ------------------------------------------------------------------------------
+def build_dict(dvc_info_return):
+
+    values = dvc_info_return.split(",")
+    dvc_dict = {'dvc_vendor' : values[0], 'dvc_hostname' : values[1], 'dvc_model' : values[2], 'dvc_version' : values[3], 'dvc_sn' : values[4]}
+    
+    return dvc_dict
+# ------------------------------------------------------------------------------
 
 #--------------- E N D   S C R I P T ---------------#
-

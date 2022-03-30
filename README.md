@@ -19,7 +19,7 @@
 --> Cisco Catalyst 4500 VSS   --> actual no hostname support<br />
 --> Cisco Catalyst 1000   --> actual no hostname support <br />
 --> Cisco Catalyst 4900   --> actual no hostname support <br />
---> Cisco Catalyst 9000   --> actual no hostname support <br />
+--> Cisco Catalyst 9000er series   --> actual no hostname support <br />
 --> Cisco Catalyst 6807   --> actual no hostname support Standalone <br />
 --> Cisco Catalyst 6807 VSS   --> actual no hostname support <br />
 <br />

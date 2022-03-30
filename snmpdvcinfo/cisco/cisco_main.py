@@ -12,7 +12,6 @@
 # --------------- M O D U L E S ---------------#
 
 import snmpdvcinfo
-from snmpdvcinfo_develop.scripts.snmpdvcinfo.snmpdvcinfo.cisco.cisco_sw_rt import get_dvc_info_cisco_c2960c
 
 # --------------- S N M P   O I D   V A R I A B L E S ---------------#
 

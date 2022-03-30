@@ -4,8 +4,8 @@
 <br />
 <br />
 ## Actual supported vendors:
---> Cisco support <br />
---> Fortinet Firewall support <br />
+--> Cisco<br />
+--> Fortinet Firewall<br />
 <br />
 <br />
 ## Actual supported devices:

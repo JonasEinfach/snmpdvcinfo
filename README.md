@@ -7,25 +7,25 @@
 <br />
 ## Actual supported devices:
 -> Cisco: <br />
---> Cisco Nexus <br />
---> Cisco Catalyst 2960X <br />
---> Cisco Catalyst 2960CG <br />
---> Cisco Catalyst 3650 <br />
+--> Cisco Nexus   --> actual no hostname support<br />
+--> Cisco Catalyst 2960X   --> actual no hostname support <br />
+--> Cisco Catalyst 2960C <br />
+--> Cisco Catalyst 3650   --> actual no hostname support <br />
 --> Cisco Catalyst 3560 <br />
---> Cisco Catalyst 4500 Standalone<br />
---> Cisco Catalyst 4500 VSS<br />
---> Cisco Catalyst 1000 <br />
---> Cisco Catalyst 4900 <br />
---> Cisco Catalyst 9000 <br />
---> Cisco Catalyst 6807 Standalone <br />
---> Cisco Catalyst 6807 VSS <br />
+--> Cisco Catalyst 4500 Standalone   --> actual no hostname support<br />
+--> Cisco Catalyst 4500 VSS   --> actual no hostname support<br />
+--> Cisco Catalyst 1000   --> actual no hostname support <br />
+--> Cisco Catalyst 4900   --> actual no hostname support <br />
+--> Cisco Catalyst 9000   --> actual no hostname support <br />
+--> Cisco Catalyst 6807   --> actual no hostname support Standalone <br />
+--> Cisco Catalyst 6807 VSS   --> actual no hostname support <br />
 <br />
 -> Fortinet: <br />
---> Fortinet 3000D<br />
---> Fortinet 1500D<br />
---> Fortinet 600E<br />
---> Fortinet 500E<br />
---> Fortinet 300E<br />
+--> Fortinet 3000D   --> actual no hostname support<br />
+--> Fortinet 1500D   --> actual no hostname support<br />
+--> Fortinet 600E   --> actual no hostname support<br />
+--> Fortinet 500E   --> actual no hostname support<br />
+--> Fortinet 300E   --> actual no hostname support<br />
 <br />
 ## Usage Examples:
 \>>> import snmpdvcinfo <br />

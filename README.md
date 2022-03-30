@@ -1,6 +1,9 @@
 # snmpdvcinfo - SNMP Device Information
 --> Script for fetching Network Device Information via SNMP (Vendor, Hostname, Model, Version, Serial Number) <br />
 --> Return Dict with following keys: 'dvc_vendor','dvc_hostname','dvc_model','dvc_version','dvc_sn' <br />
+<br />
+<br />
+## Actual supported vendors:
 --> Cisco support <br />
 --> Fortinet Firewall support <br />
 <br />
@@ -26,6 +29,7 @@
 --> Fortinet 600E   --> actual no hostname support<br />
 --> Fortinet 500E   --> actual no hostname support<br />
 --> Fortinet 300E   --> actual no hostname support<br />
+<br />
 <br />
 ## Usage Examples:
 \>>> import snmpdvcinfo <br />

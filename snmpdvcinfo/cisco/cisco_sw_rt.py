@@ -409,7 +409,7 @@ def get_dvc_info_cisco_default(ip,community_string): # --> get model, version an
         # --> extract Version aus Dict
         final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT]
 
-    if "C3650" in final_dvc_hostname: # --> special for C3650
+    if "C3650" in final_dvc_model: # --> special for C3650
         dvc_version = snmpdvcinfo.get_snmp(ip, [OID_CISCO_VERSION_SW_C3650], community_string)
         if dvc_version != 0 and dvc_version[OID_CISCO_VERSION_SW_C3650] != "":  # --> check for snmp error
             final_dvc_version = dvc_version[OID_CISCO_VERSION_SW_C3650]

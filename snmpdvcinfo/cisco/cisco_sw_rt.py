@@ -97,6 +97,13 @@ def get_dvc_info_cisco_nx(ip,community_string): # --> get model and version for 
     if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_NX] != "": # --> check for snmp error
         # --> extract Version aus Dict
         final_dvc_sn = dvc_sn[OID_CISCO_SN_SW_NX]
+        
+    # --> get hostname for default 
+    dvc_hostname = snmpdvcinfo.get_snmp(ip, [OID_CISCO_HOSTNAME_DEFAULT], community_string)
+
+    if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT]
 
     return "%s,%s,%s,%s,%s" % (final_dvc_vendor,final_dvc_hostname,final_dvc_model,final_dvc_version,final_dvc_sn)
 # ------------------------------------------------------------------------------
@@ -157,6 +164,13 @@ def get_dvc_info_cisco_c4500(ip,community_string): # --> get model and version f
             if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_DEFAULT] != "": # --> check for snmp error
                 # --> extract Version aus Dict
                 final_dvc_sn = dvc_sn[OID_CISCO_SN_DEFAULT]
+                
+    # --> get hostname for default 
+    dvc_hostname = snmpdvcinfo.get_snmp(ip, [OID_CISCO_HOSTNAME_DEFAULT], community_string)
+
+    if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT]
 
     return "%s,%s,%s,%s,%s" % (final_dvc_vendor,final_dvc_hostname,final_dvc_model,final_dvc_version,final_dvc_sn)
 # ------------------------------------------------------------------------------
@@ -192,6 +206,13 @@ def get_dvc_info_cisco_c1000(ip,community_string): # --> get model and version f
     if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_C1000] != "": # --> check for snmp error
         # --> extract Version aus Dict
         final_dvc_sn = dvc_sn[OID_CISCO_SN_SW_C1000]
+        
+    # --> get hostname for default 
+    dvc_hostname = snmpdvcinfo.get_snmp(ip, [OID_CISCO_HOSTNAME_DEFAULT], community_string)
+
+    if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT]
 
     return "%s,%s,%s,%s,%s" % (final_dvc_vendor,final_dvc_hostname,final_dvc_model,final_dvc_version,final_dvc_sn)
 # ------------------------------------------------------------------------------
@@ -227,6 +248,13 @@ def get_dvc_info_cisco_c2960x(ip,community_string): # --> get model and version 
     if dvc_sn != 0 and dvc_sn[OID_CISCO_SN_SW_C2960X] != "": # --> check for snmp error
         # --> extract Version aus Dict
         final_dvc_sn = dvc_sn[OID_CISCO_SN_SW_C2960X]
+        
+    # --> get hostname for default 
+    dvc_hostname = snmpdvcinfo.get_snmp(ip, [OID_CISCO_HOSTNAME_DEFAULT], community_string)
+
+    if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT]
 
     return "%s,%s,%s,%s,%s" % (final_dvc_vendor,final_dvc_hostname,final_dvc_model,final_dvc_version,final_dvc_sn)
 # ------------------------------------------------------------------------------
@@ -269,6 +297,13 @@ def get_dvc_info_cisco_c3560(ip,community_string): # --> get model and version f
     if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_SW_C3560] != "": # --> check for snmp error
         # --> extract Version aus Dict
         final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_SW_C3560]
+    
+    # --> get hostname for default 
+    dvc_hostname = snmpdvcinfo.get_snmp(ip, [OID_CISCO_HOSTNAME_DEFAULT], community_string)
+
+    if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT]
 
     return "%s,%s,%s,%s,%s" % (final_dvc_vendor,final_dvc_hostname,final_dvc_model,final_dvc_version,final_dvc_sn)
 # ------------------------------------------------------------------------------
@@ -311,6 +346,13 @@ def get_dvc_info_cisco_c2960c(ip,community_string):
     if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_SW_C2960C] != "": # --> check for snmp error
         # --> extract Version aus Dict
         final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_SW_C2960C]
+        
+    # --> get hostname for default 
+    dvc_hostname = snmpdvcinfo.get_snmp(ip, [OID_CISCO_HOSTNAME_DEFAULT], community_string)
+
+    if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT]
 
     return "%s,%s,%s,%s,%s" % (final_dvc_vendor,final_dvc_hostname,final_dvc_model,final_dvc_version,final_dvc_sn)
 # ------------------------------------------------------------------------------
@@ -366,6 +408,13 @@ def get_dvc_info_cisco_c6807(ip,community_string): # --> get model and version f
                 # --> extract SN aus Dict
                 dvc_sn_2 = dvc_sn_2[OID_CISCO_SN_SW_C6807_VSS_2]
                 final_dvc_sn = "VSS1:%s_VSS2:%s" %(dvc_sn_1,dvc_sn_2)
+    
+    # --> get hostname for default 
+    dvc_hostname = snmpdvcinfo.get_snmp(ip, [OID_CISCO_HOSTNAME_DEFAULT], community_string)
+
+    if dvc_hostname != 0 and dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT] != "": # --> check for snmp error
+        # --> extract Version aus Dict
+        final_dvc_hostname = dvc_hostname[OID_CISCO_HOSTNAME_DEFAULT]
 
     return "%s,%s,%s,%s,%s" % (final_dvc_vendor,final_dvc_hostname,final_dvc_model,final_dvc_version,final_dvc_sn)
 # ------------------------------------------------------------------------------

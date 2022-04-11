@@ -15,7 +15,7 @@
 --> Cisco Catalyst 2960C <br />
 --> Cisco Catalyst 3650 <br />
 --> Cisco Catalyst 3560 <br />
---> Cisco Catalyst 4500 Standalone t<br />
+--> Cisco Catalyst 4500 Standalone <br />
 --> Cisco Catalyst 4500 VSS <br />
 --> Cisco Catalyst 1000 <br />
 --> Cisco Catalyst 4900 <br />

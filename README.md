@@ -22,6 +22,7 @@
 --> Cisco Catalyst 9000er series <br />
 --> Cisco Catalyst 6807 <br />
 --> Cisco Catalyst 6807 VSS <br />
+--> Cisco WLC C9800 <br />
 <br />
 -> Fortinet: <br />
 --> Fortinet 3000D <br />

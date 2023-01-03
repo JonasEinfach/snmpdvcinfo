@@ -35,6 +35,7 @@ def get_cisco_main(ip,community_string):
         elif "C3560"                        in dvc_version: return snmpdvcinfo.get_dvc_info_cisco_c3560(ip,community_string)
         elif "s6t64"                        in dvc_version: return snmpdvcinfo.get_dvc_info_cisco_c6807(ip,community_string)
         elif "Adaptive Security Appliance"  in dvc_version: return "cisco,fw_not_supported,fw_not_supported,fw_not_supported,fw_not_supported"
+        elif "C9800"                        in dvc_version: return snmpdvcinfo.get_dvc_info_cisco_c9800(ip,community_string)
         else:                                               return snmpdvcinfo.get_dvc_info_cisco_default(ip,community_string)
 # ------------------------------------------------------------------------------
 

@@ -13,12 +13,10 @@ import snmpdvcinfo
 
 # --------------- S N M P   O I D   V A R I A B L E S ---------------#
 
+# --> Fortinet Default
 OID_FORTINET_MODEL = "1.3.6.1.2.1.47.1.1.1.1.7.1"
-
 OID_FORTINET_VERSION = "1.3.6.1.2.1.47.1.1.1.1.10.1"
-
 OID_FORTINET_SN = "1.3.6.1.2.1.47.1.1.1.1.11.1"
-
 OID_FORTINET_HOSTNAME = "1.3.6.1.2.1.1.5.0"
 
 # ------------------------------------------------------------------------------

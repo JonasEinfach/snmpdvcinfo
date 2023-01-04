@@ -16,7 +16,7 @@ import snmpdvcinfo
 # --> Cisco WLC C9800
 OID_CISCO_MODEL_WLC_C9800 = "1.3.6.1.2.1.47.1.1.1.1.13.2"
 OID_CISCO_VERSION_WLC_C9800 = "1.3.6.1.2.1.1.1.0"
-OID_CISCO_SN_WLC_C9800 = "1.3.6.1.2.1.47.1.1.1.1.11.2"
+OID_CISCO_SN_WLC_C9800 = "1.3.6.1.2.1.47.1.1.1.1.11.500"
 OID_CISCO_HOSTNAME_WLC_C9800 = "1.3.6.1.2.1.1.5.0"
 
 # --------------- F U N C T I O N S ---------------#
